@@ -1,0 +1,67 @@
+@import 'tailwindcss';
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+
+  /* Gem Museum Brand Palette */
+  --gem-obsidian: #0b0b0d;
+  --gem-gold: #c6a667;
+  --gem-emerald: #0e5e47;
+  --gem-sapphire: #1d3a6e;
+  --gem-amethyst: #6b4a88;
+  --gem-rose: #e8c8c3;
+  --gem-sand: #d5c7a0;
+  --gem-smoke: #6a6a6f;
+  --gem-moon: #f4f2ee;
+  --gem-ruby: #c7152a;
+  --gem-citrine: #e2a72d;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  /* Your fonts */
+  --font-inter: var(--font-inter); /* body font */
+  --font-playfair: var(--font-playfair); /* heading font */
+
+  /* Tailwind defaults */
+  --font-sans: var(--font-inter);
+  --font-serif: var(--font-playfair);
+
+  /* Gemstone Brand Colors */
+  --color-obsidian: var(--gem-obsidian);
+  --color-gold: var(--gem-gold);
+  --color-emerald: var(--gem-emerald);
+  --color-sapphire: var(--gem-sapphire);
+  --color-amethyst: var(--gem-amethyst);
+  --color-rose: var(--gem-rose);
+  --color-sand: var(--gem-sand);
+  --color-smoke: var(--gem-smoke);
+  --color-moon: var(--gem-moon);
+  --color-ruby: var(--gem-ruby);
+  --color-citrine: var(--gem-citrine);
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-inter), sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-playfair), serif;
+}
