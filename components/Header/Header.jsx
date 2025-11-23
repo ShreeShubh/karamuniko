@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
+import { navMenu } from '../../lib/constants/data'
 
 const Header = () => {
   return (
@@ -8,7 +9,7 @@ const Header = () => {
       <div className="container mx-auto flex justify-end items-center gap-4 py-3 px-4">
         {topCTAButtons.map((button, index) => (
           <Link key={index} href={button.link}>
-            <button className="px-5 py-2 rounded-md text-white bg-obsidian shadow-md hover:brightness-110 transition-all duration-200 cursor-pointer">
+            <button className="px-4 py-1 rounded-md text-white bg-obsidian shadow-md hover:brightness-110 transition-all duration-200 cursor-pointer">
               {button.label}
             </button>
           </Link>
@@ -94,78 +95,5 @@ export default Header
 const topCTAButtons = [
   { label: 'Shop', link: '/' },
   { label: 'Buy Tickets', link: '/' },
-  { label: 'Donate', link: '/' },
-]
-
-export const navMenu = [
-  {
-    label: 'Explore',
-    link: '/explore',
-    children: [
-      { label: 'Galleries', link: '/galleries' },
-      { label: 'Mineral Gallery', link: '/galleries/mineral' },
-      { label: 'Crystal Gallery', link: '/galleries/crystal' },
-      { label: 'Rare Stones', link: '/galleries/rare-stones' },
-      { label: 'Virtual Tour', link: '/virtual-tour' },
-    ],
-  },
-
-  {
-    label: 'About the Museum',
-    link: '/about',
-    children: [
-      { label: 'The Gemology Story', link: '/gemology-story' },
-      { label: 'Policies', link: '/policies' },
-      { label: 'FAQs', link: '/faqs' },
-    ],
-  },
-
-  {
-    label: 'Exhibits & Collections',
-    link: '/exhibits',
-    children: [
-      { label: 'Special Exhibitions', link: '/special-exhibitions' },
-      { label: 'Rare Stones', link: '/galleries/rare-stones' },
-      { label: 'Mineral Gallery', link: '/galleries/mineral' },
-      { label: 'Crystal Gallery', link: '/galleries/crystal' },
-    ],
-  },
-
-  {
-    label: 'Visitor Experience',
-    link: '/visitor-experience',
-    children: [
-      { label: 'Events', link: '/events' },
-      { label: 'Workshops', link: '/workshops' },
-      { label: 'Guided Tours', link: '/guided-tours' },
-      { label: 'School Visits', link: '/school-visits' },
-    ],
-  },
-
-  {
-    label: 'Learn',
-    link: '/learn',
-    children: [
-      { label: 'Blog', link: '/blog' },
-      { label: 'Gemology Articles', link: '/gemology-articles' },
-      { label: 'Research & Science', link: '/research-science' },
-    ],
-  },
-
-  {
-    label: 'Visit',
-    link: '/visit',
-    children: [
-      { label: 'Buy Tickets', link: '/buy-tickets' },
-      { label: 'Hours & Location', link: '/hours-location' },
-      { label: 'Museum Map', link: '/museum-map' },
-      { label: 'Feedback', link: '/feedback' },
-      { label: 'Contact', link: '/contact' },
-    ],
-  },
-
-  {
-    label: 'Auction',
-    link: '/auction',
-  },
+  { label: 'Make a Donation', link: '/' },
 ]

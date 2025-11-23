@@ -1,6 +1,7 @@
 import Header from '@/components/Header/Header'
 import { inter, playfair } from './fonts'
 import '@/styles/globals.css'
+import Footer from '@/components/Footer/Footer'
 
 export const metadata = {
   title: 'KaramUniko Museum',
@@ -13,6 +14,7 @@ export default function RootLayout({ children }) {
       <body className={`${inter.variable} ${playfair.variable} antialiased`}>
         <Header />
         {children}
+        <Footer />
       </body>
     </html>
   )
