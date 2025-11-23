@@ -11,12 +11,42 @@ import {
   Dropdown,
   DropdownItem,
 } from 'flowbite-react'
+import { useEffect, useState } from 'react'
 
 const Header = () => {
+  const [showTopCTA, setShowTopCTA] = useState(true)
+
+  useEffect(() => {
+    let lastScrollY = window.scrollY
+
+    const handleScroll = () => {
+      const currentScroll = window.scrollY
+
+      if (currentScroll > lastScrollY) {
+        // scrolling down → hide CTA
+        setShowTopCTA(false)
+      } else {
+        // scrolling up → show CTA
+        setShowTopCTA(true)
+      }
+
+      lastScrollY = currentScroll
+    }
+
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
+
   return (
     <div className="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-md shadow-sm z-30">
       {/* 🔹 Top CTA Buttons */}
-      <div className="container mx-auto justify-end items-center gap-4 py-3 px-4 hidden md:flex">
+      <div
+        className={`
+    container mx-auto justify-end items-center gap-4 px-4 hidden md:flex
+    overflow-hidden transition-all duration-500 ease-out
+    ${showTopCTA ? 'opacity-100 max-h-24 py-3' : 'opacity-0 max-h-0 py-0'}
+  `}
+      >
         {topCTAButtons.map((button, index) => (
           <Link key={index} href={button.link}>
             <button className="px-4 py-1 rounded-md text-white bg-obsidian shadow-md hover:brightness-110 transition-all duration-200 cursor-pointer whitespace-nowrap">
