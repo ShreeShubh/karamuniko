@@ -4,7 +4,7 @@ import { treasuresOfNature } from '../../../lib/constants/data'
 const TreasuresOfNature = () => {
   return (
     <section className="py-16">
-      <div className="container mx-auto px-4 bg-white/40 py-10 rounded-xl">
+      <div className="container mx-auto px-4 bg-white/20 backdrop-blur-sm py-10 rounded-xl">
         {/* <div className="flex gap-5 items-center">
           <h2 className="text-7xl text-center text-white bg-obsidian p-5 w-full">
             Treasures of Nature
