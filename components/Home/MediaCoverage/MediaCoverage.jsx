@@ -12,7 +12,7 @@ const images = [
 
 const MediaCoverage = () => {
   return (
-    <div className="w-full py-16">
+    <div className="w-full py-16 bg-white">
       {/* Heading */}
       {/* <h2 className="text-3xl md:text-7xl font-semibold text-center mb-8">
         Media <span className="text-gold">Coverage</span>

@@ -1,57 +1,38 @@
 import Image from 'next/image'
-import Link from 'next/link'
-import { IoIosArrowRoundForward } from 'react-icons/io'
+import Title from '../../ui/Title/Title'
 
 const Shop = () => {
   return (
-    <section className="w-full max-w-7xl mx-auto px-4 py-10">
+    <section className="w-full py-10 bg-white">
       {/* Heading */}
-      <div className="flex justify-between items-center">
-        <div>
-          <h2 className="text-5xl font-semibold">Shop</h2>
-          <p className="text-xl mt-3">
-            Visit our in-house shop and buy traditional and artistic souvenir
-            items
-          </p>
-        </div>
+      <div className="container mx-auto px-4">
+        <Title
+          title="Shop"
+          subtitle="Visit our in-house shop and buy traditional and artistic souvenir
+            items"
+          cta="Enter Shop"
+        />
 
-        <Link
-          href="/"
-          className="
-    group self-end flex items-center gap-2 text-2xl font-semibold 
-    hover:opacity-80 transition cursor-pointer
-  "
-        >
-          ENTER SHOP{' '}
-          <IoIosArrowRoundForward
-            className="
-      text-4xl transform transition-all duration-300
-      group-hover:translate-x-1
-    "
-          />
-        </Link>
-      </div>
-
-      {/* Divider */}
-      <div className="border-t border-gray-400 mt-2 mb-6"></div>
-
-      {/* Cards */}
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
-        {items.map((item, index) => (
-          <div key={index} className="flex flex-col">
-            <div
-              className={`relative w-full h-64 ${item.bg} flex items-end justify-center`}
-            >
-              <Image
-                src={item.image}
-                alt={item.title}
-                fill
-                className="w-full h-full object-cover"
-              />
+        {/* Cards */}
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+          {items.map((item, index) => (
+            <div key={index} className="flex flex-col">
+              <div
+                className={`relative w-full h-64 ${item.bg} flex items-end justify-center`}
+              >
+                <Image
+                  src={item.image}
+                  alt={item.title}
+                  fill
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <p className="text-center text-lg mt-3 font-medium">
+                {item.title}
+              </p>
             </div>
-            <p className="text-center text-lg mt-3 font-medium">{item.title}</p>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </section>
   )
