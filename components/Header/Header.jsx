@@ -66,7 +66,7 @@ const Header = () => {
               width={70}
               height={70}
               alt="KaramUniko Museum Logo"
-              className="hover:scale-105 transition-transform duration-200"
+              className=""
             />
           </NavbarBrand>
 
@@ -77,16 +77,21 @@ const Header = () => {
             {navMenu.map((menuItem, index) => {
               const isForcedNormal =
                 menuItem.label === 'Exhibitions & Events' ||
-                menuItem.label === 'Plan Your Visit'
+                menuItem.label === 'Plan Your Visit' ||
+                menuItem.label === 'Auction' ||
+                menuItem.label === 'Home'
+
+              const hoverUnderline =
+                'relative after:absolute after:left-1/2 after:-translate-x-1/2 after:-bottom-2 after:h-[2px] after:w-full after:scale-x-0 after:origin-center after:bg-amber-400 after:transition-transform after:duration-300 hover:after:scale-x-100'
 
               return (
-                <div key={index}>
+                <div
+                  key={index}
+                  className={`text-base hover:text-amber-400 transition-colors duration-200`}
+                >
                   {/* 🔹 Forced Normal Link */}
                   {isForcedNormal ? (
-                    <Link
-                      href={menuItem.link}
-                      className="hover:text-amber-400 transition-colors duration-200"
-                    >
+                    <Link href={menuItem.link} className={`${hoverUnderline}`}>
                       {menuItem.label}
                     </Link>
                   ) : !menuItem.children ? (
@@ -105,7 +110,7 @@ const Header = () => {
                         <DropdownItem key={cIdx}>
                           <Link
                             href={child.link}
-                            className="text-white hover:text-amber-400 transition-colors duration-200"
+                            className="text-white hover:text-amber-400 transition-colors duration-200 text-base"
                           >
                             {child.label}
                           </Link>
