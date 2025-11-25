@@ -75,7 +75,9 @@ const Header = () => {
           {/* 🔹 Navigation Links */}
           <NavbarCollapse className="text-white gap-6">
             {navMenu.map((menuItem, index) => {
-              const isForcedNormal = menuItem.label === 'Exhibitions & Events'
+              const isForcedNormal =
+                menuItem.label === 'Exhibitions & Events' ||
+                menuItem.label === 'Plan Your Visit'
 
               return (
                 <div key={index}>
