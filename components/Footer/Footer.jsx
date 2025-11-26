@@ -12,23 +12,23 @@ const Footer = () => {
   return (
     <div className="bg-obsidian text-gray-300 mt-auto">
       {/* MAIN GRID */}
-      <div className="container mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-10 px-6 py-12">
+      <div className="container mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-10 px-6 py-7">
         {/* LOGO + CONTACT */}
-        <div className="space-y-4">
+        <div className="space-y-4 col-span-2">
           <Image
             src="/logo/logo.png"
-            width={80}
-            height={80}
+            width={150}
+            height={150}
             alt="KaramUniko Logo"
-            className="mx-auto sm:mx-0"
+            className=""
           />
 
-          <h3 className="text-2xl font-bold text-amber-300 tracking-widest">
-            KaramUniko
+          <h3 className="text-lg font-bold tracking-widest uppercase -mt-7">
+            Natural • Auspicious • Pride
           </h3>
 
           <div className="space-y-1 text-sm">
-            <p className="font-semibold text-white">Contact Us</p>
+            <p className="font-semibold text-amber-300">Contact Us</p>
             <p>India: +91 80004 14200</p>
             <p>USA: +1 341 758 1850</p>
             <p>Email: karamuniko@gmail.com</p>
@@ -39,27 +39,33 @@ const Footer = () => {
         {navMenu
           .filter(
             (section) =>
-              section.label !== 'Exhibitions & Events' &&
-              section.label !== 'Auction'
-            // section.label !== 'Learn'
+              ![
+                'Exhibitions & Events',
+                'Auction',
+                'Home',
+                'Plan Your Visit',
+              ].includes(section.label)
           )
           .map((section, index) => (
             <div key={index}>
-              <p className="text-lg font-bold tracking-wider text-white mb-3">
+              <p className="text-lg font-bold tracking-wider text-white mb-3 pt-7">
                 {section.label}
               </p>
 
               <ul className="space-y-2">
-                {(section.children || [{ label: section.label }]).map(
-                  (child, i) => (
-                    <li
-                      key={i}
+                {(section.children?.length
+                  ? section.children
+                  : [{ label: section.label, link: section.link }]
+                ).map((child, i) => (
+                  <li key={i}>
+                    <Link
+                      href={child.link || '#'}
                       className="hover:text-amber-400 cursor-pointer transition text-sm"
                     >
                       {child.label}
-                    </li>
-                  )
-                )}
+                    </Link>
+                  </li>
+                ))}
               </ul>
             </div>
           ))}
@@ -67,7 +73,7 @@ const Footer = () => {
 
       {/* SOCIAL + NEWSLETTER */}
       <div className="border-t border-gray-700">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 px-6 py-8">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 px-6 py-6">
           {/* SOCIAL ICONS */}
           <div className="flex flex-col space-y-4">
             <p className="font-semibold text-white">Follow us</p>
@@ -101,15 +107,15 @@ const Footer = () => {
       <div className="border-t border-gray-700">
         <div className="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center px-6 py-4 text-sm text-gray-400 gap-3">
           <div className="flex gap-6">
-            <a href="/terms" className="hover:text-white">
+            <Link href="/terms" className="hover:text-white">
               Terms and Conditions
-            </a>
-            <a href="/privacy" className="hover:text-white">
+            </Link>
+            <Link href="/privacy" className="hover:text-white">
               Privacy Policy
-            </a>
-            <a href="/contact" className="hover:text-white">
+            </Link>
+            <Link href="/contact" className="hover:text-white">
               Contact Information
-            </a>
+            </Link>
           </div>
 
           <p>© 2025 KaramUniko. All rights reserved.</p>
