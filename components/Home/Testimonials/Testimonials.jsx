@@ -2,60 +2,99 @@
 
 import Image from 'next/image'
 import Slider from 'react-slick'
+import { useRef } from 'react'
 import { testimonials } from '../../../lib/constants/data'
+import { FaArrowLeft, FaArrowRight } from 'react-icons/fa6'
 
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
+import Title from '../../ui/Title/Title'
+import Link from 'next/link'
 
 const Testimonials = () => {
+  const sliderRef = useRef(null)
+
   const settings = {
-    dots: true,
-    infinite: true,
-    speed: 1000,
-    slidesToShow: 3,
-    slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 3000,
+    dots: false,
     arrows: false,
-    pauseOnHover: true,
-    responsive: [
-      {
-        breakpoint: 768,
-        settings: {
-          slidesToShow: 1,
-        },
-      },
-    ],
+    infinite: true,
+    speed: 600,
+    slidesToShow: 1,
+    slidesToScroll: 1,
   }
 
   return (
-    <div className="mt-16 mb-20 max-w-6xl mx-auto">
-      <Slider {...settings}>
-        {testimonials.map((item, i) => (
-          <div key={i} className="px-4 pt-14 h-full pb-5">
-            <div className="border-2 border-primary-red rounded-3xl flex flex-col gap-5 pt-20 pb-5 px-12 h-full w-full relative">
-              {/* Quotes Symbol */}
-              <div className="absolute -top-12 left-10 bg-white pl-1">
-                <Image
-                  src="/home/quotes.svg"
-                  width={136}
-                  height={100}
-                  alt="quotes"
-                />
-              </div>
+    <section className="py-20 bg-white relative">
+      <div className="container mx-auto px-4">
+        <Title
+          title="Testimonials"
+          subtitle="Real stories from visitors who felt the energy of nature’s rare creations."
+          onPrev={() => sliderRef.current.slickPrev()}
+          onNext={() => sliderRef.current.slickNext()}
+        />
 
-              <p className="text-primary-gray grow">{item.testimonial}</p>
+        <Slider ref={sliderRef} {...settings}>
+          {testimonials.map((item) => (
+            <div key={item.id}>
+              <div className="grid md:grid-cols-2 gap-10 items-center">
+                {/* VIDEO */}
+                <div className="rounded-xl overflow-hidden">
+                  <iframe
+                    src={item.videoUrl}
+                    title={item.title}
+                    className="w-full h-72 md:h-96 rounded-xl"
+                    allowFullScreen
+                  />
+                </div>
 
-              <div className="space-y-1 text-primary-gray pt-4">
-                <p className="text-lg font-bold">{item.name}</p>
-                <p className="">{item.designation}</p>
+                {/* TEXT */}
+                <div className="space-y-6 pr-6">
+                  <h3 className="text-3xl font-semibold text-gray-900">
+                    {item.title}
+                  </h3>
+
+                  <p className="text-gray-600 text-lg leading-relaxed">
+                    {item.description}
+                  </p>
+
+                  <Link
+                    href={item.youtubeLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 px-7 py-3 rounded-full bg-gray-900 text-white font-semibold hover:bg-black transition"
+                  >
+                    {item.cta}
+                  </Link>
+                </div>
               </div>
             </div>
-          </div>
-        ))}
-      </Slider>
-    </div>
+          ))}
+        </Slider>
+      </div>
+    </section>
   )
 }
 
 export default Testimonials
+
+function NextArrow({ onClick }) {
+  return (
+    <button
+      className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-white shadow-md hover:shadow-lg w-10 h-10 rounded-full flex items-center justify-center z-10"
+      onClick={onClick}
+    >
+      <FaArrowRight className="text-gray-700" />
+    </button>
+  )
+}
+
+function PrevArrow({ onClick }) {
+  return (
+    <button
+      className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-white shadow-md hover:shadow-lg w-10 h-10 rounded-full flex items-center justify-center z-10"
+      onClick={onClick}
+    >
+      <FaArrowLeft className="text-gray-700" />
+    </button>
+  )
+}
