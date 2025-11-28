@@ -13,7 +13,7 @@ const MuseumHighlights = () => {
         "
           >
             <h2 className="text-3xl mb-3">
-              World’s First Divine Gemstone Museum
+              World’s First Divine Diamond - Gemstone Museum
             </h2>
             <p className="text-lg text-gray-200">
               Discover rare crystals and gemstones, naturally shaped by nature’s
