@@ -3,7 +3,7 @@ import { MdLocalOffer, MdAccessTime } from 'react-icons/md'
 const MuseumIntroBanner = () => {
   return (
     <section className="w-full bg-white py-16">
-      <div className="container mx-auto px-4 flex flex-col lg:flex-row justify-between gap-10">
+      <div className="container mx-auto px-8 flex flex-col lg:flex-row justify-between gap-10">
         {/* LEFT TEXT */}
         <div className="lg:w-2/3">
           <h1 className="text-5xl font-medium leading-tight">

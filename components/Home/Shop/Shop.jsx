@@ -5,7 +5,7 @@ const Shop = () => {
   return (
     <section className="w-full py-10 bg-white">
       {/* Heading */}
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-8">
         <Title
           title="Shop"
           subtitle="Visit our in-house shop and buy traditional and artistic souvenir

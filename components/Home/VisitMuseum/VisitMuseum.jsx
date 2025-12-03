@@ -6,7 +6,7 @@ import Title from '../../ui/Title/Title'
 const VisitMuseum = ({ heading }) => {
   return (
     <section className="py-16 bg-white">
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-8">
         {/* Heading */}
         <Title
           title="Visit the Museum"

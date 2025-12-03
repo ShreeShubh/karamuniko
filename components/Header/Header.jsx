@@ -42,14 +42,14 @@ const Header = () => {
       {/* 🔹 Top CTA Buttons */}
       <div
         className={`
-    container mx-auto justify-end items-center gap-4 px-4 hidden md:flex
+    container mx-auto justify-end items-center gap-4 px-8 hidden md:flex
     overflow-hidden transition-all duration-500 ease-out
     ${showTopCTA ? 'opacity-100 max-h-24 py-3' : 'opacity-0 max-h-0 py-0'}
   `}
       >
         {topCTAButtons.map((button, index) => (
           <Link key={index} href={button.link}>
-            <button className="px-4 py-1 rounded-md text-white bg-obsidian shadow-md hover:brightness-110 transition-all duration-200 cursor-pointer whitespace-nowrap">
+            <button className="px-8 py-1.5 rounded-full text-white bg-obsidian shadow-md hover:brightness-110 transition-all duration-200 cursor-pointer whitespace-nowrap">
               {button.label}
             </button>
           </Link>

@@ -8,10 +8,8 @@ const KaramGanesha = () => {
         {/* LEFT CONTENT */}
         <div className="space-y-8">
           {/* Title */}
-          <h1 className="text-5xl md:text-6xl font-extrabold leading-tight text-gray-900">
-            <span className="bg-linear-to-r from-purple-600 to-indigo-600 text-transparent bg-clip-text">
-              KARAM Amethyst Ganesha
-            </span>
+          <h1 className="text-5xl font-extrabold leading-tight text-gray-900">
+            <span>KARAM Amethyst Ganesha</span>
           </h1>
 
           {/* Description */}
@@ -38,7 +36,7 @@ const KaramGanesha = () => {
           {/* Divider */}
           <div className="border-t border-gray-300 w-full"></div>
 
-          <button className="group relative inline-flex items-center gap-3 px-8 py-4 rounded-full text-white font-semibold text-lg bg-linear-to-r from-purple-700 to-indigo-700 hover:from-purple-800 hover:to-indigo-800 shadow-lg hover:shadow-2xl transition-all duration-300">
+          <button className="group relative inline-flex items-center gap-3 px-8 py-3 rounded-full text-white bg-obsidian shadow-md hover:brightness-110 transition-all duration-200 cursor-pointer whitespace-nowrap">
             Own a Piece of Nature’s Art
             <FaArrowRight className="group-hover:translate-x-1 transition duration-300" />
           </button>

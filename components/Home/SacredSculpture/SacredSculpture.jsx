@@ -5,7 +5,7 @@ import { IoIosArrowRoundForward } from 'react-icons/io'
 const SacredSculpture = () => {
   return (
     <section className="py-16 px-6 bg-obsidian/80 backdrop-blur-sm">
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-8">
         {/* <Title
           title="Sacred Wooden Sculpture"
           subtitle="Visit our in-house shop and buy traditional and artistic souvenir
@@ -40,7 +40,7 @@ const SacredSculpture = () => {
           emerges from the same cosmic root.
         </p>
 
-        <div className="w-full max-w-6xl mx-auto flex flex-col lg:flex-row justify-center gap-10 relative">
+        <div className="w-full container mx-auto flex flex-col lg:flex-row justify-center gap-10 relative">
           {/* LEFT BRANCH CARDS */}
           <div className="flex flex-col self-center gap-6 lg:w-1/2">
             {leftCards.map((card, i) => (

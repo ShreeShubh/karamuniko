@@ -1,3 +1,4 @@
+import CrystalShowcase from '../components/Home/CrystalShowcase/CrystalShowcase'
 import HeroBanner from '../components/Home/HeroBanner/HeroBanner'
 import KaramGanesha from '../components/Home/KaramGanesha/KaramGanesha'
 import MediaCoverage from '../components/Home/MediaCoverage/MediaCoverage'
@@ -8,6 +9,7 @@ import Shop from '../components/Home/Shop/Shop'
 import Testimonials from '../components/Home/Testimonials/Testimonials'
 import TreasuresOfNature from '../components/Home/TreasuresOfNature/TreasuresOfNature'
 import VisitMuseum from '../components/Home/VisitMuseum/VisitMuseum'
+import { CollectionCTA, VisitCTA } from '../components/CTAs'
 
 export default function Home() {
   return (
@@ -26,8 +28,11 @@ export default function Home() {
         <KaramGanesha />
         <Shop />
         <SacredSculpture />
+        <CrystalShowcase />
+        <CollectionCTA />
         <MediaCoverage />
         <Testimonials />
+        <VisitCTA />
       </div>
 
       {/* Optional dark overlay */}

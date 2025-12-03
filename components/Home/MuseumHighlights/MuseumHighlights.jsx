@@ -3,7 +3,7 @@ const MuseumHighlights = () => {
     <>
       {/* <div className="bg-white py-10"></div> */}
       <section className="py-16">
-        <div className="container mx-auto px-4 grid md:grid-cols-2 gap-10">
+        <div className="container mx-auto px-8 grid md:grid-cols-2 gap-10">
           {/* Card 1 */}
           <div
             className="

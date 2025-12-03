@@ -25,7 +25,7 @@ const Testimonials = () => {
 
   return (
     <section className="py-20 bg-white relative">
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-8">
         <Title
           title="Testimonials"
           subtitle="Real stories from visitors who felt the energy of nature’s rare creations."
