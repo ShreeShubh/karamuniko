@@ -1,5 +1,5 @@
 import CrystalShowcase from '../components/Home/CrystalShowcase/CrystalShowcase'
-import HeroBanner from '../components/Home/HeroBanner/HeroBanner'
+import HeroBanner from '../components/HeroBanner/HeroBanner'
 import KaramGanesha from '../components/Home/KaramGanesha/KaramGanesha'
 import MediaCoverage from '../components/Home/MediaCoverage/MediaCoverage'
 import MuseumHighlights from '../components/Home/MuseumHighlights/MuseumHighlights'
@@ -20,7 +20,7 @@ export default function Home() {
       }}
     >
       <div className="relative z-10">
-        <HeroBanner />
+        <HeroBanner url="https://bmwebsitestreaming.blob.core.windows.net/bmvideo/Tour_of_the_British_Museum.mp4" />
         <MuseumIntroBanner />
         <MuseumHighlights />
         <VisitMuseum heading="Visit the Museum" />
