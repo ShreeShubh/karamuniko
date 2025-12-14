@@ -11,8 +11,8 @@ const GemMuseumInfo = () => {
       ></div>
       <div className="container mx-auto px-6 relative z-10">
         <Title
-          title="The Heart of Gemology in Surat"
-          subtitle="The Gem Museum is Surat’s first and most comprehensive private gemology museum"
+          title="Naturally Divine. World’s First."
+          subtitle="World’s First Museum of Naturally Occurring Divine - Shaped Diamonds & Gemstones"
           cta="Visit Museum"
         />
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">

@@ -7,7 +7,9 @@ const Title = ({ title, subtitle, cta, ctaLink = '/', onPrev, onNext }) => {
       <div className="flex justify-between items-end">
         {/* Left side */}
         <div>
-          <h2 className="text-5xl font-semibold tracking-tight">{title}</h2>
+          <h2 className="text-5xl font-semibold tracking-tight text-gray-900">
+            {title}
+          </h2>
           <p className="text-2xl mt-3 text-gray-600">{subtitle}</p>
         </div>
 
