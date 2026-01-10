@@ -1,29 +1,49 @@
-const HeroBanner = ({ url }) => {
+import Image from 'next/image'
+
+const HeroBanner = ({
+  url,
+  title = 'Discover the World of Gemstones',
+  cta = 'Plan Your Visit',
+}) => {
+  const isVideo = /\.(mp4|webm|ogg)$/i.test(url)
+
   return (
     <section className="relative w-full h-[80vh] overflow-hidden">
-      {/* Video */}
-      <video
-        className="w-full h-full object-cover"
-        src={url}
-        autoPlay
-        loop
-        muted
-        playsInline
-      />
+      {/* Media */}
+      {isVideo ? (
+        <video
+          className="w-full h-full object-cover"
+          src={url}
+          autoPlay
+          loop
+          muted
+          playsInline
+        />
+      ) : (
+        <Image
+          src={url}
+          alt="Hero Banner"
+          fill
+          priority
+          className="object-cover"
+        />
+      )}
 
-      <div className="absolute inset-0 bg-black/40"></div>
+      {/* Overlay */}
+      <div className="absolute inset-0 bg-black/40" />
 
-      {/* Optional center text */}
+      {/* Content */}
       <div className="absolute inset-0 flex flex-col gap-8 items-center justify-center">
-        <h1 className="text-white text-4xl md:text-6xl font-playfair mt-16">
-          Discover the World of Gemstones
+        <h1 className="text-white text-4xl md:text-6xl font-playfair mt-16 text-center">
+          {title}
         </h1>
+
         <button
           className="px-6 py-3 border border-white text-white text-lg 
-  transition-all duration-300 ease-in-out 
-  hover:bg-white hover:text-black cursor-pointer"
+          transition-all duration-300 ease-in-out 
+          hover:bg-white hover:text-black"
         >
-          Plan Your Visit
+          {cta}
         </button>
       </div>
     </section>
